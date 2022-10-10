@@ -7,7 +7,9 @@ with atheris.instrument_imports():
 
 def testOneInput(data):
     fdp = atheris.FuzzedDataProvider(data)
-    json2html.convert(atheris.ConsumeUnicodeNoSurrogates(64))
+
+    input = fdp.ConsumeUnicodeNoSurrogates(64)
+    json2html.convert(json = input)
         
 def main():
     atheris.Setup(sys.argv, testOneInput)
