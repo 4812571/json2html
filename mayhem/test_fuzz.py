@@ -7,11 +7,7 @@ with atheris.instrument_imports():
 
 def testOneInput(data):
     fdp = atheris.FuzzedDataProvider(data)
-    input = {
-        "name": "json2html",
-        "description": "Converts JSON to HTML tabular representation"
-    }
-    json2html.convert(json = input)
+    json2html.convert(atheris.ConsumeUnicodeNoSurrogates(64))
         
 def main():
     atheris.Setup(sys.argv, testOneInput)
