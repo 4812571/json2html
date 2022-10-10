@@ -1,0 +1,4 @@
+project: json2html
+target: test_fuzz
+cmds:
+- cmd: /out/test_fuzz.pkg
